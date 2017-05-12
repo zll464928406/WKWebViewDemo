@@ -44,8 +44,8 @@
     
     self.jsHelper.webView = self.webView;
     
-    NSURL *url = [NSURL URLWithString:@"https://www.moxtra.com/service3/#timeline"];
-    //NSURL *url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"html"];
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"html"];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
