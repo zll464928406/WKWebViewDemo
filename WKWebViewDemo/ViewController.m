@@ -23,6 +23,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (NSAppKitVersionNumber < 1391.12)
+    {
+        /* On a 10.10.x or earlier system */
+    }
     
     self.jsHelper = [[MXJSManager alloc] initWithDelegate:self vc:self];
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
@@ -123,10 +127,11 @@
 //打开新窗口的时候调用
 -(WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures
 {
-    
-    WKWebView *newWebView = [[WKWebView alloc] initWithFrame:self.webView.frame configuration:configuration];
-    [webView loadRequest:navigationAction.request];
-    return newWebView;
+    NSString *url =[navigationAction.request.URL absoluteString];
+    if ([url containsString:@"#mymeet"] || [url containsString:@"#/mymeet"])
+    {
+
+    }
     
     NSLog(@"createWebViewWithConfiguration  request     %@",navigationAction.request);
     if (!navigationAction.targetFrame.isMainFrame) {
