@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="12120"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -686,25 +685,7 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AkN-zi-9q1">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="AkN-zi-9q1" secondAttribute="bottom" id="22X-Tc-52V"/>
-                            <constraint firstItem="AkN-zi-9q1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="6Jl-km-RdD"/>
-                            <constraint firstItem="AkN-zi-9q1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="SWw-sg-gpd"/>
-                            <constraint firstAttribute="trailing" secondItem="AkN-zi-9q1" secondAttribute="trailing" id="TEw-Cd-WjQ"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="webView" destination="AkN-zi-9q1" id="O0E-4g-ObI"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
